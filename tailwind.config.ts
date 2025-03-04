@@ -56,7 +56,7 @@ export default {
         },
         // Custom cloud platform colors
         cloud: {
-          primary: "#0EA5E9",
+          primary: "#fe5000", // Updated to orange
           secondary: "#7E69AB",
           accent: "#9b87f5",
           background: "#1A1F2C",

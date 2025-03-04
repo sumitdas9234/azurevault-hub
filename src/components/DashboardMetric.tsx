@@ -16,7 +16,7 @@ export function DashboardMetric({ title, value, icon, description }: MetricProps
           <p className="text-sm text-cloud-muted">{title}</p>
           <p className="text-2xl font-semibold text-cloud-text">{value}</p>
           {description && (
-            <p className="text-sm text-cloud-muted mt-1">{description}</p>
+            <p className="text-sm font-medium text-cloud-primary mt-1">{description}</p>
           )}
         </div>
         <div className="text-cloud-primary text-2xl">{icon}</div>

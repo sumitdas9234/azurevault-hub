@@ -36,7 +36,9 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Cloud Platform</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-cloud-primary font-bold text-lg">
+            Cloud Platform
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => (
