@@ -1,4 +1,3 @@
-
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { DashboardMetric } from "@/components/DashboardMetric";
@@ -7,10 +6,9 @@ import {
   Server,
   Database,
   Network,
-  Storage,
+  HardDrive,
   Shield,
   Cpu,
-  HardDrive,
   Cloud,
 } from "lucide-react";
 
@@ -76,7 +74,7 @@ const Index = () => {
                 <ServiceCard
                   title="Storage Solutions"
                   description="Secure and scalable storage"
-                  icon={<Storage />}
+                  icon={<HardDrive />}
                 />
                 <ServiceCard
                   title="Security Center"

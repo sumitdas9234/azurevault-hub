@@ -15,7 +15,7 @@ import {
   Database,
   Network,
   Settings,
-  Storage,
+  HardDrive,
   Shield,
   Activity,
 } from "lucide-react";
@@ -25,7 +25,7 @@ const menuItems = [
   { title: "Compute", icon: Server, url: "#compute" },
   { title: "Database", icon: Database, url: "#database" },
   { title: "Networking", icon: Network, url: "#networking" },
-  { title: "Storage", icon: Storage, url: "#storage" },
+  { title: "Storage", icon: HardDrive, url: "#storage" },
   { title: "Security", icon: Shield, url: "#security" },
   { title: "Monitoring", icon: Activity, url: "#monitoring" },
   { title: "Settings", icon: Settings, url: "#settings" },
