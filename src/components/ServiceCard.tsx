@@ -12,7 +12,7 @@ interface ServiceCardProps {
 export function ServiceCard({ title, description, icon, className }: ServiceCardProps) {
   return (
     <Card className={cn(
-      "p-6 bg-white/5 backdrop-blur-lg border-0 hover:bg-white/10 transition-all duration-300 cursor-pointer group",
+      "p-6 bg-cloud-canvas/50 backdrop-blur-lg border-0 hover:bg-cloud-canvas/80 transition-all duration-300 cursor-pointer group",
       className
     )}>
       <div className="space-y-4">
@@ -20,8 +20,9 @@ export function ServiceCard({ title, description, icon, className }: ServiceCard
           {icon}
         </div>
         <h3 className="text-lg font-semibold text-cloud-text">{title}</h3>
-        <p className="text-sm text-cloud-muted">{description}</p>
+        <p className="text-sm text-cloud-yellow">{description}</p>
       </div>
     </Card>
   );
 }
+

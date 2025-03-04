@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -54,13 +53,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom cloud platform colors
+        // Custom cloud platform colors based on provided palette
         cloud: {
-          primary: "#fe5000", // Updated to orange
-          secondary: "#7E69AB",
-          accent: "#9b87f5",
-          background: "#1A1F2C",
-          text: "#F1F1F1",
+          primary: "#fe5000", // Pure Orange
+          canvas: "#1c1c1c", // Pure Canvas
+          black: "#faf7f1", // Pure Black
+          yellow: "#eba520", // Pure Yellow
+          gold: "#fbdb4d", // PW Gold
+          blue: "#4b77bb", // PW Blue
+          background: "#1c1c1c", // Using Pure Canvas as background
+          text: "#faf7f1", // Using Pure Black for text
           muted: "#8E9196",
         },
       },
