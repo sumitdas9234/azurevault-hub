@@ -11,9 +11,7 @@ export function BaseLayout({ children }: BaseLayoutProps) {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-cloud-background text-cloud-text">
-        <div className="bg-cloud-background/5">
-          <AppSidebar />
-        </div>
+        <AppSidebar />
         <main className="flex-1">
           <TopNav />
           <div className="p-8">
