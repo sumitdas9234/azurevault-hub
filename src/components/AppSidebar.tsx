@@ -19,18 +19,18 @@ import { useLocation } from "react-router-dom";
 
 const menuItems = [
   { title: "Home", icon: LayoutDashboard, url: "/" },
-  { title: "Compute", icon: Server, url: "#compute" },
-  { title: "Storage", icon: HardDrive, url: "#storage" },
-  { title: "Networking", icon: Network, url: "#networking" },
-  { title: "Monitoring", icon: Activity, url: "#monitoring" },
+  { title: "Compute", icon: Server, url: "/compute" },
+  { title: "Storage", icon: HardDrive, url: "/storage" },
+  { title: "Networking", icon: Network, url: "/networking" },
+  { title: "Monitoring", icon: Activity, url: "/monitoring" },
 ];
 
 export function AppSidebar() {
   const location = useLocation();
 
   return (
-    <Sidebar className="w-52">
-      <div className="flex justify-center py-6 mb-4 border-b border-cloud-background/10">
+    <Sidebar>
+      <div className="flex justify-center py-6 mb-8 border-b border-cloud-background/10">
         <img 
           src="/placeholder.svg" 
           alt="Cloud Platform Logo" 
@@ -42,8 +42,7 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => {
-                const isActive = location.pathname === item.url || 
-                               (location.pathname === "/" && item.url === "/");
+                const isActive = location.pathname === item.url;
                 return (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
