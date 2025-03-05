@@ -4,7 +4,6 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -12,23 +11,17 @@ import {
 import {
   LayoutDashboard,
   Server,
-  Database,
   Network,
-  Settings,
   HardDrive,
-  Shield,
   Activity,
 } from "lucide-react";
 
 const menuItems = [
-  { title: "Dashboard", icon: LayoutDashboard, url: "/" },
+  { title: "Home", icon: LayoutDashboard, url: "/" },
   { title: "Compute", icon: Server, url: "#compute" },
-  { title: "Database", icon: Database, url: "#database" },
-  { title: "Networking", icon: Network, url: "#networking" },
   { title: "Storage", icon: HardDrive, url: "#storage" },
-  { title: "Security", icon: Shield, url: "#security" },
+  { title: "Networking", icon: Network, url: "#networking" },
   { title: "Monitoring", icon: Activity, url: "#monitoring" },
-  { title: "Settings", icon: Settings, url: "#settings" },
 ];
 
 export function AppSidebar() {
@@ -36,9 +29,6 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="text-cloud-primary font-bold text-lg">
-            Cloud Platform
-          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => (
