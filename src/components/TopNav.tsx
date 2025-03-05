@@ -10,8 +10,8 @@ export function TopNav() {
       <div className="flex h-16 items-center px-4 gap-4">
         <SidebarTrigger />
         
-        <div className="flex-1 flex items-center gap-4 md:gap-8">
-          <form className="flex-1 flex items-center max-w-sm">
+        <div className="flex-1 flex items-center justify-end gap-4 md:gap-8">
+          <form className="flex items-center max-w-sm">
             <div className="relative w-full">
               <Search className="absolute left-2 top-2.5 h-4 w-4 text-cloud-muted" />
               <Input
