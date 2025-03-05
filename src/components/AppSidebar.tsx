@@ -30,7 +30,7 @@ export function AppSidebar() {
 
   return (
     <Sidebar>
-      <div className="flex justify-center py-6 mb-8 border-b border-cloud-background/10">
+      <div className="flex justify-center py-8 mb-8">
         <img 
           src="/placeholder.svg" 
           alt="Cloud Platform Logo" 
@@ -48,7 +48,7 @@ export function AppSidebar() {
                     <SidebarMenuButton asChild>
                       <a 
                         href={item.url} 
-                        className={`flex items-center gap-3 text-cloud-text hover:text-cloud-primary transition-colors ${
+                        className={`flex items-center gap-3 py-3 px-4 text-cloud-text hover:text-cloud-primary transition-colors rounded-md ${
                           isActive ? "bg-cloud-background/10 text-cloud-primary" : ""
                         }`}
                       >

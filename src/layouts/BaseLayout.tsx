@@ -1,5 +1,5 @@
 
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { TopNav } from "@/components/TopNav";
 
@@ -11,7 +11,9 @@ export function BaseLayout({ children }: BaseLayoutProps) {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-cloud-background text-cloud-text">
-        <AppSidebar />
+        <div className="bg-cloud-background/5">
+          <AppSidebar />
+        </div>
         <main className="flex-1">
           <TopNav />
           <div className="p-8">
