@@ -1,6 +1,6 @@
 
 import { BaseLayout } from "@/layouts/BaseLayout";
-import { Card } from "@/components/ui/card";
+import { DashboardMetric } from "@/components/DashboardMetric";
 import { TestTube, Monitor } from "lucide-react";
 import { 
   Select,
@@ -37,10 +37,10 @@ const Compute = () => {
         
         <div className="flex gap-4">
           <Select value={selectedVCenter} onValueChange={setSelectedVCenter}>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-[180px] bg-white/5 border-0">
               <SelectValue placeholder="Select vCenter" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-cloud-background border-cloud-muted">
               {vcenters.map((vcenter) => (
                 <SelectItem key={vcenter} value={vcenter}>
                   vCenter {vcenter}
@@ -50,10 +50,10 @@ const Compute = () => {
           </Select>
 
           <Select>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-[180px] bg-white/5 border-0">
               <SelectValue placeholder="Select Cluster" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-cloud-background border-cloud-muted">
               {clusterMap[selectedVCenter as keyof typeof clusterMap].map((cluster) => (
                 <SelectItem key={cluster} value={cluster}>
                   Cluster {cluster}
@@ -63,47 +63,43 @@ const Compute = () => {
           </Select>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card className="p-6 bg-cloud-background/5 border border-cloud-background/10">
-            <div className="flex items-start justify-between">
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Testbeds</h3>
-                <p className="text-cloud-muted">243 Active Testbeds</p>
-              </div>
-              <TestTube className="text-cloud-primary h-6 w-6" />
-            </div>
-          </Card>
-
-          <Card className="p-6 bg-cloud-background/5 border border-cloud-background/10">
-            <div className="flex items-start justify-between">
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Dev VMs</h3>
-                <p className="text-cloud-muted">34 Dev VMs</p>
-              </div>
-              <Monitor className="text-cloud-primary h-6 w-6" />
-            </div>
-          </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <DashboardMetric
+            title="Testbeds"
+            value="243"
+            description="Active Testbeds"
+            icon={<TestTube />}
+          />
+          <DashboardMetric
+            title="Dev VMs"
+            value="34"
+            description="Active VMs"
+            icon={<Monitor />}
+          />
         </div>
 
-        <div className="rounded-lg border bg-cloud-background/5">
+        <div className="rounded-lg overflow-hidden bg-white/5 backdrop-blur-lg border-0">
           <Table>
             <TableHeader>
-              <TableRow>
-                <TableHead>Name</TableHead>
-                <TableHead>Expiry</TableHead>
-                <TableHead>Created</TableHead>
-                <TableHead>Owner</TableHead>
-                <TableHead>VMs</TableHead>
+              <TableRow className="border-b border-white/10 hover:bg-white/5">
+                <TableHead className="text-cloud-muted font-medium">Name</TableHead>
+                <TableHead className="text-cloud-muted font-medium">Expiry</TableHead>
+                <TableHead className="text-cloud-muted font-medium">Created</TableHead>
+                <TableHead className="text-cloud-muted font-medium">Owner</TableHead>
+                <TableHead className="text-cloud-muted font-medium">VMs</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {testbedData.map((testbed) => (
-                <TableRow key={testbed.name}>
-                  <TableCell>{testbed.name}</TableCell>
-                  <TableCell>{testbed.expiry}</TableCell>
-                  <TableCell>{testbed.created}</TableCell>
-                  <TableCell>{testbed.owner}</TableCell>
-                  <TableCell>{testbed.vms}</TableCell>
+                <TableRow 
+                  key={testbed.name} 
+                  className="border-b border-white/10 hover:bg-white/5"
+                >
+                  <TableCell className="font-medium text-cloud-text">{testbed.name}</TableCell>
+                  <TableCell className="text-cloud-muted">{testbed.expiry}</TableCell>
+                  <TableCell className="text-cloud-muted">{testbed.created}</TableCell>
+                  <TableCell className="text-cloud-muted">{testbed.owner}</TableCell>
+                  <TableCell className="text-cloud-muted">{testbed.vms}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
