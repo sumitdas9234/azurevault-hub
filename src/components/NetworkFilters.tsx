@@ -1,4 +1,3 @@
-
 import {
   Select,
   SelectContent,
@@ -27,12 +26,12 @@ export function NetworkFilters({ onSubnetChange, onRouteTypeChange }: NetworkFil
         <SelectTrigger className="w-[200px] bg-white/5 border-white/10">
           <SelectValue placeholder="Select Subnet" />
         </SelectTrigger>
-        <SelectContent className="bg-cloud-background border-cloud-background/20">
+        <SelectContent className="bg-white border-gray-300">
           {subnets.map((subnet) => (
             <SelectItem
               key={subnet.id}
               value={subnet.id}
-              className="text-cloud-text hover:bg-cloud-background/20 focus:bg-cloud-background/20"
+              className="text-black hover:bg-gray-100 focus:bg-gray-100"
             >
               {subnet.name}
             </SelectItem>
@@ -44,16 +43,16 @@ export function NetworkFilters({ onSubnetChange, onRouteTypeChange }: NetworkFil
         <SelectTrigger className="w-[200px] bg-white/5 border-white/10">
           <SelectValue placeholder="Route Type" />
         </SelectTrigger>
-        <SelectContent className="bg-cloud-background border-cloud-background/20">
+        <SelectContent className="bg-white border-gray-300">
           <SelectItem
             value="static"
-            className="text-cloud-text hover:bg-cloud-background/20 focus:bg-cloud-background/20"
+            className="text-black hover:bg-gray-100 focus:bg-gray-100"
           >
             Static Routes
           </SelectItem>
           <SelectItem
             value="openshift"
-            className="text-cloud-text hover:bg-cloud-background/20 focus:bg-cloud-background/20"
+            className="text-black hover:bg-gray-100 focus:bg-gray-100"
           >
             Openshift Routes
           </SelectItem>

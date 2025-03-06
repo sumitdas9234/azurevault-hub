@@ -1,4 +1,3 @@
-
 import {
   Sidebar,
   SidebarContent,
@@ -30,25 +29,18 @@ export function AppSidebar() {
 
   return (
     <Sidebar>
-      <div className="flex justify-center py-8 mb-8">
-        <img 
-          src="/placeholder.svg" 
-          alt="Cloud Platform Logo" 
-          className="h-8"
-        />
-      </div>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="my-10">
               {menuItems.map((item) => {
                 const isActive = location.pathname === item.url;
                 return (
-                  <SidebarMenuItem key={item.title}>
+                  <SidebarMenuItem key={item.title} className="py-1">
                     <SidebarMenuButton asChild>
                       <a 
                         href={item.url} 
-                        className={`flex items-center gap-3 py-3 px-4 text-cloud-text hover:text-cloud-primary transition-colors rounded-md ${
+                        className={`flex items-center gap-3 py-4 px-4 text-cloud-text hover:text-cloud-primary transition-colors rounded-md ${
                           isActive ? "bg-cloud-background/10 text-cloud-primary" : ""
                         }`}
                       >

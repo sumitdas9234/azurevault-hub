@@ -1,15 +1,18 @@
-
 import { Input } from "@/components/ui/input";
-import { Bell, Search, Settings, User } from "lucide-react";
+import { Bell, Search, Settings, User, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SidebarTrigger } from "@/components/ui/sidebar";
 
-export function TopNav() {
+interface TopNavProps {
+  toggleSidebar: () => void;
+}
+
+export function TopNav({ toggleSidebar }: TopNavProps) {
   return (
     <div className="bg-cloud-primary">
-      <div className="flex h-16 items-center px-4 gap-4">
-        <SidebarTrigger className="text-white hover:text-white/80" />
-        
+      <div className="flex h-16 items-center px-4 gap-4 justify-between">
+        <Button variant="ghost" size="icon" className="text-white hover:text-white/80 hover:bg-white/10" onClick={toggleSidebar}>
+          <Menu className="h-5 w-5" />
+        </Button>
         <div className="flex-1 flex items-center justify-end gap-4 md:gap-8">
           <form className="flex items-center w-96">
             <div className="relative w-full">

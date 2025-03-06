@@ -12,7 +12,7 @@ interface DetailsPanelProps {
 export function DetailsPanel({ isOpen, onClose, title, description, children }: DetailsPanelProps) {
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent side="right" className="w-[30%] bg-cloud-background border-l border-white/10">
+      <SheetContent side="right" className="w-[30%] bg-cloud-background border-l border-white/0">
         <SheetHeader>
           <SheetTitle className="text-cloud-text">{title}</SheetTitle>
           <SheetDescription className="text-cloud-muted">
