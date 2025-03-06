@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,6 +61,7 @@ export default {
           background: "#1A1F2C",
           text: "#F1F1F1",
           muted: "#8E9196",
+          border: "#2e3747", // Dark border color
         },
       },
       keyframes: {
@@ -88,6 +88,9 @@ export default {
         fadeIn: "fadeIn 0.5s ease-out",
         slideIn: "slideIn 0.5s ease-out",
       },
+      borderWidth: {
+        thin: '1px',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

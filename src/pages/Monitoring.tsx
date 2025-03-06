@@ -2,6 +2,7 @@ import { BaseLayout } from "@/layouts/BaseLayout";
 import { DashboardMetric } from "@/components/DashboardMetric";
 import { Activity, AlertCircle, FileText } from "lucide-react";
 import SystemStatus from "@/components/SystemStatus";
+import Alerts from "@/components/Alerts";
 
 const Monitoring = () => {
   return (
@@ -22,9 +23,15 @@ const Monitoring = () => {
             icon={<AlertCircle />}
           />
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-6">
-          <div className="lg:col-span-4">
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
+          <div className="lg:col-span-6">
             <SystemStatus />
+          </div>
+          <div className="lg:col-span-4">
+            <div className="mx-auto py-6">
+              <h2 className="text-2xl font-semibold mb-4">Recent Alerts</h2>
+              <Alerts />
+            </div>
           </div>
         </div>
       </div>
