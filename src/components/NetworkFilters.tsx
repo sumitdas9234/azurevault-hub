@@ -24,7 +24,7 @@ export function NetworkFilters({ onSubnetChange, onRouteTypeChange }: NetworkFil
   return (
     <div className="flex gap-4">
       <Select onValueChange={onSubnetChange} defaultValue="all">
-        <SelectTrigger className="w-[200px] bg-cloud-background/5">
+        <SelectTrigger className="w-[200px] bg-white/5 border-white/10">
           <SelectValue placeholder="Select Subnet" />
         </SelectTrigger>
         <SelectContent className="bg-cloud-background border-cloud-background/20">
@@ -41,7 +41,7 @@ export function NetworkFilters({ onSubnetChange, onRouteTypeChange }: NetworkFil
       </Select>
 
       <Select onValueChange={(value) => onRouteTypeChange(value as RouteType)} defaultValue="static">
-        <SelectTrigger className="w-[200px] bg-cloud-background/5">
+        <SelectTrigger className="w-[200px] bg-white/5 border-white/10">
           <SelectValue placeholder="Route Type" />
         </SelectTrigger>
         <SelectContent className="bg-cloud-background border-cloud-background/20">
