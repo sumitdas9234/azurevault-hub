@@ -32,16 +32,16 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupContent>
+          <SidebarGroupContent className="px-0">
             <SidebarMenu className="space-y-0">
               {menuItems.map((item) => {
                 const isActive = location.pathname === item.url;
                 return (
-                  <SidebarMenuItem key={item.title} className="border-b border-white/5">
-                    <SidebarMenuButton asChild>
+                  <SidebarMenuItem key={item.title} className="border-b border-white/5 w-full">
+                    <SidebarMenuButton asChild className="w-full">
                       <a
                         href={item.url}
-                        className={`flex items-center gap-3 py-3 px-6 text-sm font-medium transition-all duration-200 ease-in-out ${
+                        className={`flex items-center gap-3 py-3 px-6 text-sm font-medium transition-all duration-200 ease-in-out w-full ${
                           isActive
                             ? "bg-white/5 text-cloud-primary backdrop-blur-lg"
                             : "hover:bg-white/5 hover:backdrop-blur-lg text-cloud-text hover:text-cloud-primary"
