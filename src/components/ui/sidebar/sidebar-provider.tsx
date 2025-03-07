@@ -5,7 +5,6 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { SIDEBAR_COOKIE_MAX_AGE, SIDEBAR_COOKIE_NAME, SIDEBAR_KEYBOARD_SHORTCUT, SIDEBAR_WIDTH, SIDEBAR_WIDTH_ICON } from "./types";
 import { SidebarContext } from "./sidebar-context";
-import type { SidebarState } from "./types";
 
 export const SidebarProvider = React.forwardRef<
   HTMLDivElement,
@@ -66,7 +65,7 @@ export const SidebarProvider = React.forwardRef<
       return () => window.removeEventListener("keydown", handleKeyDown);
     }, [toggleSidebar]);
 
-    const state: SidebarState = open ? "expanded" : "collapsed";
+    const state = open ? "expanded" : "collapsed";
 
     const contextValue = React.useMemo(
       () => ({
@@ -108,4 +107,3 @@ export const SidebarProvider = React.forwardRef<
 );
 
 SidebarProvider.displayName = "SidebarProvider";
-
