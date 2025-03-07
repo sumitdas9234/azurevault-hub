@@ -16,7 +16,7 @@ const Index = () => {
     <BaseLayout>
       <div className="mx-auto space-y-8">
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold">Cloud Dashboard</h1>
+          <h1 className="text-3xl font-bold">Overview</h1>
           <p className="text-cloud-muted">
             Monitor and manage your cloud resources
           </p>
@@ -24,28 +24,28 @@ const Index = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <DashboardMetric
-            title="Active Instances"
+            title="Active Testbeds"
             value="12"
             icon={<Server />}
-            description="+2 from last week"
+            description="+30% increase in the last month"
           />
           <DashboardMetric
-            title="Storage Used"
-            value="1.2 TB"
+            title="Active VMs"
+            value="150"
             icon={<HardDrive />}
-            description="80% of capacity"
+            description="+30% increase in the last month"
           />
           <DashboardMetric
-            title="CPU Usage"
-            value="65%"
+            title="Active vSphere Clusters"
+            value="4"
             icon={<Cpu />}
-            description="Peak load: 82%"
+            description="Stable performance"
           />
           <DashboardMetric
-            title="Network Traffic"
-            value="2.4 GB/s"
+            title="Attached Routes"
+            value="25"
             icon={<Network />}
-            description="Current throughput"
+            description="No changes detected"
           />
         </div>
 

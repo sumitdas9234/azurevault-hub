@@ -58,7 +58,7 @@ export default {
           primary: "#fe5000", // Updated to orange
           secondary: "#7E69AB",
           accent: "#9b87f5",
-          background: "#1A1F2C",
+          background: "#121621",
           text: "#F1F1F1",
           muted: "#8E9196",
           border: "#2e3747", // Dark border color
