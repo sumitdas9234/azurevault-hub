@@ -102,14 +102,14 @@ export function AppSidebar() {
   };
 
   return (
-    <Sidebar className="mt-0 bg-[#13161E]/20">
+    <Sidebar className="mt-0 bg-[#1F2129]">
       <SidebarContent>
         <div className="flex items-center justify-center h-16 bg-cloud-primary text-white font-bold">
           Private Cloud
         </div>
         <SidebarGroup>
-          <SidebarGroupContent className="px-0">
-            <SidebarMenu className="space-y-0">
+          <SidebarGroupContent className="px-0 py-2">
+            <SidebarMenu className="space-y-0 ">
               {menuItems.map((item) => {
                 const isActive = location.pathname === item.url;
                 const hasSubItems = item.subItems && item.subItems.length > 0;

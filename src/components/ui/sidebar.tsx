@@ -245,7 +245,7 @@ const Sidebar = React.forwardRef<
           <div
             data-sidebar="sidebar"
             className={cn(
-              "flex h-full w-full flex-col bg-white/5 backdrop-blur-lg group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow",
+              "flex h-full w-full flex-col  backdrop-blur-lg group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow",
             )}
           >
             {children}
@@ -402,7 +402,7 @@ const SidebarContent = React.forwardRef<
       ref={ref}
       data-sidebar="content"
       className={cn(
-        "flex min-h-0 flex-1 flex-col gap-1 overflow-auto group-data-[collapsible=icon]:overflow-hidden bg-white/5 backdrop-blur-lg",
+        "flex min-h-0 flex-1 flex-col gap-1 overflow-auto group-data-[collapsible=icon]:overflow-hidden backdrop-blur-lg",
         className
       )}
       {...props}
@@ -510,7 +510,7 @@ const SidebarMenuItem = React.forwardRef<
 SidebarMenuItem.displayName = "SidebarMenuItem"
 
 const sidebarMenuButtonVariants = cva(
-  "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md px-2 py-1.5 text-left text-sm outline-none ring-cloud-primary transition-[width,height,padding]  focus-visible:ring-2  disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-cloud-primary/20 data-[active=true]:font-medium data-[active=true]:text-cloud-primary group-data-[state=open]:hover:bg-cloud-primary/20 group-data-[state=open]:hover:text-cloud-primary group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
+  "peer/menu-button flex w-full items-center gap-2 overflow-hidden px-2 py-2.5 text-left text-sm outline-none ring-cloud-primary transition-[width,height,padding]  focus-visible:ring-2  disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-cloud-primary/20 data-[active=true]:font-medium data-[active=true]:text-cloud-primary group-data-[state=open]:hover:bg-cloud-primary/20 group-data-[state=open]:hover:text-cloud-primary group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -519,9 +519,9 @@ const sidebarMenuButtonVariants = cva(
           "bg-cloud-background shadow-[0_0_0_1px_hsl(var(--cloud-border))] hover:bg-cloud-primary/10 hover:text-cloud-primary hover:shadow-[0_0_0_1px_hsl(var(--cloud-accent))]",
       },
       size: {
-        default: "h-10 text-sm", // Increased default height
-        sm: "h-7 text-xs",
-        lg: "h-12 text-sm group-data-[collapsible=icon]:!p-0",
+        default: "h-12 text-sm", // Increased default height
+        sm: "h-9 text-xs",
+        lg: "h-14 text-sm group-data-[collapsible=icon]:!p-0",
       },
     },
     defaultVariants: {
@@ -560,7 +560,7 @@ const SidebarMenuButton = React.forwardRef<
         data-sidebar="menu-button"
         data-size={size}
         data-active={isActive}
-        className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
+        className={cn(sidebarMenuButtonVariants({ variant, size }), className, "border-b border-cloud-border w-full")}
         {...props}
       />
     )
@@ -720,12 +720,13 @@ const SidebarMenuSubButton = React.forwardRef<
       data-size={size}
       data-active={isActive}
       className={cn(
-        "flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-md px-2 text-cloud-text outline-none ring-cloud-primary hover:bg-cloud-primary/10 hover:text-cloud-primary focus-visible:ring-2 active:bg-cloud-primary/10 active:text-cloud-primary disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-cloud-accent-foreground",
+        "flex h-9 min-w-0 -translate-x-px items-center gap-2 overflow-hidden px-2 text-cloud-text outline-none ring-cloud-primary hover:bg-cloud-primary/10 hover:text-cloud-primary focus-visible:ring-2 active:bg-cloud-primary/10 active:text-cloud-primary disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:text-cloud-accent-foreground",
         "data-[active=true]:bg-cloud-primary/20 data-[active=true]:text-cloud-primary",
         size === "sm" && "text-xs",
         size === "md" && "text-sm",
         "group-data-[collapsible=icon]:hidden",
-        className
+        className,
+        "border-b border-cloud-border w-full"
       )}
       {...props}
     />
