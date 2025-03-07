@@ -27,25 +27,29 @@ const Index = () => {
             title="Active Testbeds"
             value="12"
             icon={<Server />}
-            description="+30% increase in the last month"
+            description="4 Whitelisted Testbeds"
+            increase={{ value: 10, isPositive: true, count: 10 }}
           />
           <DashboardMetric
             title="Active VMs"
             value="150"
             icon={<HardDrive />}
-            description="+30% increase in the last month"
+            description="12 Dev VMs"
+            increase={{ value: 5, isPositive: false, count: 5 }}
           />
           <DashboardMetric
             title="Active vSphere Clusters"
             value="4"
             icon={<Cpu />}
-            description="Stable performance"
+            description="123 ESXI Hosts"
+            increase={{ value: 2, isPositive: true, count: 2 }}
           />
           <DashboardMetric
             title="Attached Routes"
             value="25"
             icon={<Network />}
-            description="No changes detected"
+            description="75 Available Routes"
+            increase={{ value: 8, isPositive: false, count: 8 }}
           />
         </div>
 
