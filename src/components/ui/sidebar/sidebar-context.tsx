@@ -1,13 +1,16 @@
 
 import * as React from "react";
-import { SidebarContext } from "./types";
+import type { SidebarContext } from "./types";
 
-export const SidebarContext = React.createContext<SidebarContext | null>(null);
+const SidebarContextValue = React.createContext<SidebarContext | null>(null);
 
 export function useSidebar() {
-  const context = React.useContext(SidebarContext);
+  const context = React.useContext(SidebarContextValue);
   if (!context) {
     throw new Error("useSidebar must be used within a SidebarProvider.");
   }
   return context;
 }
+
+export { SidebarContextValue as SidebarContext };
+

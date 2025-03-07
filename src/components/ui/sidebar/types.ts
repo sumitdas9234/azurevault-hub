@@ -1,6 +1,7 @@
+export type SidebarState = "expanded" | "collapsed";
 
 export type SidebarContext = {
-  state: "expanded" | "collapsed";
+  state: SidebarState;
   open: boolean;
   setOpen: (open: boolean) => void;
   openMobile: boolean;
