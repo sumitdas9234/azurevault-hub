@@ -33,18 +33,18 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu className="space-y-2 p-2">
+            <SidebarMenu className="space-y-0">
               {menuItems.map((item) => {
                 const isActive = location.pathname === item.url;
                 return (
-                  <SidebarMenuItem key={item.title}>
+                  <SidebarMenuItem key={item.title} className="border-b border-white/5">
                     <SidebarMenuButton asChild>
                       <a
                         href={item.url}
-                        className={`flex items-center gap-3 py-3 px-4 text-sm font-medium rounded-lg transition-all duration-200 ease-in-out border border-transparent ${
+                        className={`flex items-center gap-3 py-3 px-6 text-sm font-medium transition-all duration-200 ease-in-out ${
                           isActive
-                            ? "bg-white/5 text-cloud-primary backdrop-blur-lg border-white/10"
-                            : "hover:bg-white/5 hover:backdrop-blur-lg hover:border-white/10 text-cloud-text hover:text-cloud-primary"
+                            ? "bg-white/5 text-cloud-primary backdrop-blur-lg"
+                            : "hover:bg-white/5 hover:backdrop-blur-lg text-cloud-text hover:text-cloud-primary"
                         }`}
                       >
                         <item.icon className="h-5 w-5" />
